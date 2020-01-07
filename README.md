@@ -2,7 +2,7 @@
 
 A Flutter project.
 Here's some SS of this project!
-![Screenshot of this p](ScreenShot/ss1)
+![Screenshot of this p](ScreenShot/ss1.png)
 
 ## Getting Started
 
