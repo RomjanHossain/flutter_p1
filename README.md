@@ -3,6 +3,8 @@
 A Flutter project.
 Here's some SS of this project!
 ![Screenshot of this p](ScreenShot/ss1.png)
+![Screenshot of this p](ScreenShot/ss2.png)
+![Screenshot of this p](ScreenShot/ss3.png)
 
 ## Getting Started
 
