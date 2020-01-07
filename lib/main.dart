@@ -1,10 +1,8 @@
 // importing universal package
 import 'package:flutter/material.dart';
+import 'src/app.dart';
 
 // here's our main funk
-void main(){
-  var myApp = MaterialApp(
-    home: Text('Testing this shit'),
-  );
-  runApp(myApp);
+void main() {
+  runApp(App());
 }
