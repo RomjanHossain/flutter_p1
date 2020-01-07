@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' show get;
+import 'dart:async';
+import 'dart:convert';
+import './model_img.dart';
+import '../widget/imgage_list.dart';
 
 class App extends StatefulWidget {
   App({Key key}) : super(key: key);
@@ -8,7 +13,18 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  List<ImageFetch> images = [];
   int counter = 0;
+  void fetchImage() async {
+    counter++;
+    var response =
+        await get('https://jsonplaceholder.typicode.com/photos/$counter');
+    var imageFetech = ImageFetch.formJson(json.decode(response.body));
+    setState(() {
+      images.add(imageFetech);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,17 +34,10 @@ class _AppState extends State<App> {
           backgroundColor: Colors.black,
           centerTitle: true,
         ),
-        body: Center(
-          child: Text('fucking number $counter this'),
-        ),
+        body: ImageList(images),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {
-            print('this is $counter');
-            setState(() {
-              counter++;
-            });
-          },
+          onPressed: fetchImage,
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
