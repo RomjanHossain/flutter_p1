@@ -1,6 +1,8 @@
 # myapp
 
-A new Flutter project.
+A Flutter project.
+Here's some SS of this project!
+![Screenshot of this p](ScreenShot/ss1)
 
 ## Getting Started
 
